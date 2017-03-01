@@ -6,6 +6,13 @@ import {
 } from 'react-native';
 
 class RecentChatScreen extends React.Component {
+
+  static navigationOptions = {
+    tabBar: ({ state }) => ({
+      label: 'Recents'
+    })
+  };
+
   render() {
     const { navigate } = this.props.navigation;
     return (

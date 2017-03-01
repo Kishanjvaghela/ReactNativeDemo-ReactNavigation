@@ -6,6 +6,13 @@ import {
 } from 'react-native';
 
 class AllContactsScreen extends React.Component {
+
+  static navigationOptions = {
+    tabBar: ({ state }) => ({
+      label: 'All'
+    }),
+  };
+
   render() {
     const { navigate } = this.props.navigation;
     return (
