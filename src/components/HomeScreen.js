@@ -4,7 +4,7 @@ import {
   View,
   Button
 } from 'react-native';
-import { StackNavigator } from 'react-navigation';
+
 
 class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -17,12 +17,11 @@ class HomeScreen extends React.Component {
       <View>
         <Text>Hello, Navigation!</Text>
         <Button
-          onPress={ () => navigate('Chat', { user: 'KIshan'})}
+          // onPress={ () => navigate('Chat', { user: 'KIshan'})}
           title="Chat"
         />
       </View>
     )
-    return <Text></Text>;
   }
 }
 
