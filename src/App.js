@@ -27,8 +27,16 @@ mainScreenNavigator.navigationOptions = {
 };
 
 const App = StackNavigator({
-  Home: { screen: mainScreenNavigator },
-  Chat: { screen: ChatScreen}
+  Home: {
+    screen: mainScreenNavigator,
+     // Optional: Override the `navigationOptions` for the screen
+    navigationOptions: {
+      title: 'My Chats',
+    },
+  },
+  Chat: {
+    screen: ChatScreen
+  }
 });
 
 export default App;
