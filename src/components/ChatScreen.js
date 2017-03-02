@@ -31,7 +31,10 @@ class ChatScreen extends React.Component {
           );
       }
 
-      return { right };
+      return {
+        right,
+        tintColor: 'blue'
+      };
     }
   };
 
