@@ -8,9 +8,30 @@ import {
 class ChatScreen extends React.Component {
   static navigationOptions = {
      // Nav options can be defined as a function of the navigation prop:
-    title: ({ state }) => `Chat with ${state.params.user}`,
-    header: {
-      right: <Button title="Info" />,
+    title: ({ state }) => {
+      if(state.params.mode === 'info') {
+        return `${state.params.user}'s Contact Info`;
+      }
+      return `Chat with ${state.params.user}`;
+    },
+    header: ({ state, setParams }) => {
+      let right = (
+        <Button
+          title={`${state.params.user}'s info`}
+          onPress={() => setParams({ mode: 'info' })}
+          />
+        );
+
+      if (state.params.mode === 'info') {
+        right = (
+          <Button
+            title="Done"
+            onPress={() => setParams({ mode: 'none' })}
+            />
+          );
+      }
+
+      return { right };
     }
   };
 
