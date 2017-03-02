@@ -9,11 +9,24 @@ const mainScreenNavigator = TabNavigator ({
   Recent: { screen: RecentChatsScreen },
   All: { screen: AllContactsScreen },
 },{
+
+  tabBarPosition:'top',
+  swipeEnabled: false,
+  animationEnabled: true,
   tabBarOptions : {
+    activeTintColor: '#FFFFFF',
+    inactiveTintColor: '#70FFFFFF',
+    labelStyle: { fontSize: 16 },
     style: {
       backgroundColor: '#42a5f5',
+    },
+
+    // for TabBarTop
+    upperCaseLabel: false,
+    indicatorStyle: {
+      backgroundColor: 'red',
     }
-  }
+  },
 });
 
 mainScreenNavigator.navigationOptions = {
