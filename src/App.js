@@ -26,6 +26,12 @@ mainScreenNavigator.navigationOptions = {
  },
 };
 
+//https://reactnavigation.org/docs/navigators/stack#StackNavigatorConfig
+const config = {
+  headerMode: 'screen',
+  // mode: 'modal'
+}
+
 const App = StackNavigator({
   Home: {
     screen: mainScreenNavigator,
@@ -37,6 +43,6 @@ const App = StackNavigator({
   Chat: {
     screen: ChatScreen
   }
-});
+}, config);
 
 export default App;
