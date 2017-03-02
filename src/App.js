@@ -5,17 +5,29 @@ import ChatScreen from './components/ChatScreen';
 import RecentChatsScreen from './components/RecentChatsScreen';
 import AllContactsScreen from './components/AllContactsScreen';
 
-const MainScreenNavigator = TabNavigator ({
+const mainScreenNavigator = TabNavigator ({
   Recent: { screen: RecentChatsScreen },
   All: { screen: AllContactsScreen },
+},{
+  tabBarOptions : {
+    style: {
+      backgroundColor: '#42a5f5',
+    }
+  }
 });
 
-MainScreenNavigator.navigationOptions = {
+mainScreenNavigator.navigationOptions = {
   title: 'My Chats',
+  header: {
+    tintColor: 'white',
+    style: {
+      backgroundColor: '#42a5f5',
+   }
+ },
 };
 
 const App = StackNavigator({
-  Home: { screen: MainScreenNavigator },
+  Home: { screen: mainScreenNavigator },
   Chat: { screen: ChatScreen}
 });
 
